@@ -1,0 +1,74 @@
+# --- Список инвесторов для отслеживания ---
+investorURLs:
+  - "https://www.tbank.ru/invest/pulse/profile/AkopyanSergey/analytics/"
+  - "https://www.tbank.ru/invest/pulse/profile/Vyacheslav_Goodwin/analytics/"
+  - "https://www.tbank.ru/invest/pulse/profile/Nabizade_92/analytics/"
+  - "https://www.tbank.ru/invest/pulse/profile/Torgash_hrenov/analytics/"
+  - "https://www.tbank.ru/invest/pulse/profile/Levry/analytics/"
+  - "https://www.tbank.ru/invest/pulse/profile/bytony/analytics/"
+  - "https://www.tbank.ru/invest/pulse/profile/netagitara/analytics/"
+  - "https://www.tbank.ru/invest/pulse/profile/DmitriyMh/analytics/"
+
+# --- Коэффициенты успешности инвесторов (для взвешивания) ---
+# Имя инвестора должно совпадать с ID из URL (регистр не важен).
+successRates:
+  akopyansergey: 1.2
+  vyacheslav_goodwin: 1.2
+  nabizade_92: 1.1
+  torgash_hrenov: 1.0
+  levry: 1.1
+  bytony: 1.0
+  netagitara: 1.0
+  dmitriymh: 1.1
+
+# === Параметры анализа трендов ===
+# Параметры, связанные со временем и данными, отсортированы по алфавиту
+analysisPeriodMinutes: 720     # Период анализа в минутах (12 часов)
+checkIntervalSeconds: 7        # Интервал проверки в секундах
+historyDays: 2                # Количество дней для хранения исторических данных
+
+# === Настройки браузера ===
+# Параметры отсортированы по алфавиту
+profileDelaySeconds: 7              # Задержка между запросами профилей (сек)
+profileDirectory: "Default"         # Директория с профилями Chrome
+userDataDir:  "/root/.config/chromium/" 
+# userDataDir: "C:\\Users\\shiba\\AppData\\Local\\Google\\Chrome\\User Data"
+
+# userAgent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4315.4 Safari/537.36"
+
+# === Финансовые ограничения ===
+# Параметры отсортированы по алфавиту
+commissionRate: 0.0005              # Комиссия брокера
+trendReversalThreshold: 25          # Порог изменения тренда для пересмотра позиций
+
+# === Веса алгоритмов анализа ===
+# Параметры алгоритма отсортированы по алфавиту
+baselineWeight: 5000000.0          # Базовый вес (использование неясно из контекста)
+EWMAAlpha: 0.3                     # Коэффициент альфа для EWMA
+minDataPoints: 3                   # Минимальное количество точек данных для анализа
+minDataWeight: 0.8                 # Минимальный вес для новых данных
+minRSquaredThreshold: 0.6         # Минимальный R² для доверия регрессии
+MinWeightThreshold: 1000000
+MinTransactionAmount: 500
+
+
+# === Торговые параметры ===
+# Параметры сгруппированы по смыслу (пороги, инвесторы, длительность) и отсортированы
+buyThreshold: 35                  # Порог срабатывания покупки (%) (fallback)
+minInvestors: 1                   # Минимум инвесторов для формирования сигнала
+minScaleInFraction: 0.05
+WhiteZoneSize: 4
+# === Telegram уведомления ===
+# Параметры отсортированы по алфавиту
+telegramChatID: 
+telegramToken: "" 
+tinkoffToken: ""
+# === Избранные акции (исключенные из покупки) ===
+# Список отсортирован по алфавиту
+ExcludedStocks:
+  - "Валюта и Металлы"
+  - "Другие"
+  - "Другое"
+  - "ОФЗ"
+  - "ВИМ Инвестиции"
+  - "ТГК"
